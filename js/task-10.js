@@ -29,5 +29,6 @@ function createBoxes(amount){
 }
 
 function destroyBoxes() {
+  divSizes = 20
   boxes.innerHTML = ''
 }
