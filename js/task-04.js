@@ -1,11 +1,13 @@
 let counterValue = 0;
 
 const counterValueEl = document.querySelector('#value');
+const incrementBtn = document.querySelector('[data-action="increment"]')
+const decrementBtn = document.querySelector('[data-action="decrement"]')
 
-counter.addEventListener('click', onCounterBtnClick) // Я ж можу напряму звертатись до елемента через id, id ж у нас унікальний???
+incrementBtn.addEventListener('click', onCounterBtnClick);
+decrementBtn.addEventListener('click', onCounterBtnClick);
 
 function onCounterBtnClick(e) {
-  if(e.target.nodeName !== 'BUTTON') return
   e.target.dataset.action === 'decrement'? counterValue-- : counterValue++
   counterValueEl.textContent = counterValue;
 }

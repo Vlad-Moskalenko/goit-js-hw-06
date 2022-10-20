@@ -9,7 +9,13 @@ function onSubmitForm(e) {
 
   const formData = new FormData(e.currentTarget)
 
-  formData.forEach((value, name) => !value? alert('Всі поля повинні бути заповнені') : formObj[name] = value)
+  for (let pair of formData.entries()) {
+    if (!pair[1]) {
+      alert('Всі поля повинні бути заповнені')
+      break;
+    }
+    else formObj[pair[0]] = pair[1]
+  }
 
   if(e.currentTarget.elements.email.value && e.currentTarget.elements.password.value){
     console.table(formObj)

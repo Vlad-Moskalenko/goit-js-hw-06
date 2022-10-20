@@ -6,12 +6,13 @@ const inputAmountEl = controls.querySelector('input');
 const createBtnEl = document.querySelector('[data-create]')
 const destroyBtnEl = document.querySelector('[data-destroy]')
 
+let divSizes = 20;
+
 createBtnEl.addEventListener('click', () => createBoxes(inputAmountEl.value))
 destroyBtnEl.addEventListener('click', destroyBoxes)
 
 function createBoxes(amount){
   let divElArr = [];
-  let divSizes = 20;
 
   for(let i=0; i<amount; i++) {
     divSizes+=10;
