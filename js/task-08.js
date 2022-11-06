@@ -4,6 +4,7 @@ loginFormEl.addEventListener('submit', onSubmitForm)
 
 function onSubmitForm(e) {
   let formObj = {}
+  const {email, password} = e.target.elements
 
   e.preventDefault()
 
@@ -17,8 +18,8 @@ function onSubmitForm(e) {
     else formObj[pair[0]] = pair[1]
   }
 
-  if(e.currentTarget.elements.email.value && e.currentTarget.elements.password.value){
+  if(email.value && password.value){
     console.table(formObj)
-    e.currentTarget.reset()
+    e.target.reset()
   }
 }
